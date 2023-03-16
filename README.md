@@ -11,7 +11,7 @@
 
 ### Step3. Execute the Main.py file using the command: 
 ### python Main.py 
-### This will initiate the service and then type some query and you will be able to see the 10 most relevant queries.
+### This will initiate the service and after typing in some query and pressing Search Query button, 10 most relevant queries will be shown.
 
 
 ### Finally Q/A file contains the answer to question that talks about the limitation of the model used and further improvements that can be done to improve the accuracy of the model.
