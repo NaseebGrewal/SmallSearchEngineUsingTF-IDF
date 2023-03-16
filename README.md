@@ -3,7 +3,7 @@
 ## In order to execute the service follow the following steps:
 ### Step1. Clone the repository to your device
 ### OR
-### Download the following files to your system: Main.py, df_queries.csv and put them in the same directory
+### Download the following files to your system: Main.py, df_queries.csv and make sure both files are in the same directory.
 ### I couldn't commit the csv file to the repository, but you can download the file from this link
 *https://drive.google.com/file/d/1SMidi8j6shCwgeHIeSzncSEdtYdF5r4q/view?usp=sharing
 
