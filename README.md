@@ -4,9 +4,11 @@
 ### Step1. Clone the repository to your device
 ### OR
 ### Download the following files to your system: Main.py, df_queries.csv and make sure both files are in the same directory.
-### I couldn't commit the csv file to the repository, but you can download the file from this link
+### couldn't commit the csv file, but you can download the file from this link
 *https://drive.google.com/file/d/1SMidi8j6shCwgeHIeSzncSEdtYdF5r4q/view?usp=sharing
 
 ### Step2. Make sure you have the following libraries installed in your device: sklearn, pandas, tkinter
 
 ### Step3. Execute the Main.py file and the Query Search Engine will begin
+
+
