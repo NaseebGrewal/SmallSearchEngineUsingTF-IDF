@@ -1,0 +1,5 @@
+Columns:
+query - Query used for the search.
+searches_per_month - Average number of times this query appeared during the month in the search 
+success_rate - Reflects how often users interect with the results of the query (it can be any kind of interation: click on filter, click on result item, activate wishlist and so on). Changes from 0 to 1. 1 means users always interact at least one time with the results of the query. 0.5 means in 50% cases users interact at least one time with the results.
+conversion_rate - Reflects how often the users have leadouts (click leads to the external shop's buy page for that product) or checkouts (you start the purchasing steps for the product directly in idealo) with the results of the query. Changes from 0 to 1. 1 means users have always at least one leadout or checkout with that query. 0.5 means in 50% cases users have at least one leadouts or checkout.
