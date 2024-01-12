@@ -1,0 +1,11 @@
+__pycache__
+.python_packages
+.venv
+venv
+
+*.env
+.vscode/
+.idea/
+
+*.jpg
+*.pdf

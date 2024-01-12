@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Load the dataset into a DataFrame
-df = pd.read_csv('df_queries.csv')
+df = pd.read_csv("df_queries.csv")
 # print(df.shape)
 # 2574248,4
 # dataset is quite big, with more than 2.5 mil entries
@@ -14,14 +14,14 @@ df = pd.read_csv('df_queries.csv')
 # Preprocess the input text
 def preprocess(text):
     text = text.lower()
-    text = ''.join(c for c in text if c.isalnum() or c.isspace())
+    text = "".join(c for c in text if c.isalnum() or c.isspace())
     words = text.split()
-    return ' '.join(words)
+    return " ".join(words)
 
 
 # Vectorize the dataset using TF-IDF
 vectorizer = TfidfVectorizer()
-corpus = df['query'].apply(preprocess)
+corpus = df["query"].apply(preprocess)
 X = vectorizer.fit_transform(corpus)
 
 
@@ -29,24 +29,25 @@ X = vectorizer.fit_transform(corpus)
 def get_top_queries(text):
     # Preprocess the input text
     text = preprocess(text)
-    
+
     # Vectorize the input text
     vec = vectorizer.transform([text])
-    
+
     # Calculate the cosine similarity between the input text and each query in the dataset
     sim_scores = cosine_similarity(vec, X)
-    
+
     # Get the indices and relevance scores of the top 10 most similar queries
     top_indices = sim_scores.argsort()[0][-10:][::-1]
     top_scores = sim_scores[0][top_indices]
-    
+
     # Get the top 10 most similar queries and their relevant columns and scores
     top_queries = df.iloc[top_indices].reset_index(drop=True)
-    top_queries['relevance'] = top_scores
-    
-    # Return the top 10 most similar queries
-    return top_queries[['relevance','query', 'searches_per_month', 'success_rate','conversion_rate']]
+    top_queries["relevance"] = top_scores
 
+    # Return the top 10 most similar queries
+    return top_queries[
+        ["relevance", "query", "searches_per_month", "success_rate", "conversion_rate"]
+    ]
 
 
 class QueryApp(tk.Tk):
@@ -71,13 +72,17 @@ class QueryApp(tk.Tk):
         self.df_frame.pack(fill="both", expand=True)
 
         # Create an empty pandas dataframe table inside the frame
-        data = {"Relevance": [], "Query": [], "Search_per_month" : [], "Success Rate" :[], "Conversion Rate" :[]}
+        data = {
+            "Relevance": [],
+            "Query": [],
+            "Search_per_month": [],
+            "Success Rate": [],
+            "Conversion Rate": [],
+        }
         self.df = pd.DataFrame(data)
         self.df_table = tk.Text(self.df_frame, font=("Courier", 12))
         self.df_table.insert("end", self.df.to_string(index=False))
         self.df_table.pack(fill="both", expand=True)
-
-
 
     def greet(self):
         # Get the input text
@@ -104,6 +109,7 @@ class QueryApp(tk.Tk):
         # input_text = 'How to make pizza at home'
         # top_queries = get_top_queries(input_text)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     app = QueryApp()
     app.mainloop()

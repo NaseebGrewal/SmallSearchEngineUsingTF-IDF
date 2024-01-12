@@ -1,5 +1,4 @@
-sklearn
+scikit-learn
 pandas
-tkinter
 ruff
 pre-commit
