@@ -7,5 +7,7 @@ venv
 .vscode/
 .idea/
 
+.ruff*
+
 *.jpg
 *.pdf
